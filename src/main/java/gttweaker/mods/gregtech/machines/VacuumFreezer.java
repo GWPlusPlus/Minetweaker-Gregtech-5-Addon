@@ -25,13 +25,24 @@ public class VacuumFreezer {
      * @param output        recipe output
      * @param input         recipe input
      * @param durationTicks freezing duration, in ticks
+     * @param euPerTick     eu consumption per tick	 
      */
-    @ZenMethod
+	 
+	@ZenMethod	 
     public static void addRecipe(IItemStack output, IIngredient input, int durationTicks) {
         MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding vacuum freezer recipe for " + output, input, output, durationTicks) {
             @Override
             protected void applySingleRecipe(ArgIterator i) {
                 RA.addVacuumFreezerRecipe(i.nextItem(), i.nextItem(), i.nextInt());
+            }
+        });
+    }
+	@ZenMethod
+	public static void addRecipe(IItemStack output, IIngredient input, int durationTicks, int euPerTick) {
+        MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding vacuum freezer recipe for " + output, input, output, durationTicks, euPerTick) {
+            @Override
+            protected void applySingleRecipe(ArgIterator i) {
+                RA.addVacuumFreezerRecipe(i.nextItem(), i.nextItem(), i.nextInt(), i.nextInt());
             }
         });
     }

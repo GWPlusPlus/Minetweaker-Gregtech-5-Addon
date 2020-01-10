@@ -31,6 +31,11 @@ public class PyrolyseOven {
      * @param durationTicks reaction time, in ticks
      * @param euPerTick     eu consumption per tick
      */
+	 /**
+		mods.gregtech.PyrolyseOven.addRecipe(< minecraft:coal:1 >*20, < liquid:creosote >*2000 , 0, < minecraft:log:1 > * 16, null, 200, 64);
+		0- circuit number
+		null - input fluid
+	 */
     @ZenMethod
     public static void addRecipe(IItemStack output, ILiquidStack fluidOutput, int circuit, IIngredient input, ILiquidStack fluidInput, int durationTicks, int euPerTick) {
         MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding Pyrolyse Oven recipe for " + output, input, fluidInput, circuit, output, fluidOutput, durationTicks, euPerTick) {

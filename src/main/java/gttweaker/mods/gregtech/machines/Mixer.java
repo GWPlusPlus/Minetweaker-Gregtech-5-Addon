@@ -26,7 +26,7 @@ public class Mixer {
      *
      * @param output        recipe output
      * @param fluidOutput   primary fluidInput
-     * @param input         input 1-4
+     * @param input         input 1-6
      * @param fluidInput    primary fluidInput
      * @param durationTicks reaction time, in ticks
      * @param euPerTick     eu consumption per tick
@@ -37,10 +37,10 @@ public class Mixer {
             MineTweakerAPI.logError("Mixer recipe requires at least 1 input");
         } else {
             MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding Mixer recipe for " + output, input[0], itemOrNull(input, 1),
-                    itemOrNull(input, 2), itemOrNull(input, 3), fluidInput, fluidOutput, output, durationTicks, euPerTick) {
+                    itemOrNull(input, 2), itemOrNull(input, 3), itemOrNull(input, 4), itemOrNull(input, 5), fluidInput, fluidOutput, output, durationTicks, euPerTick) {
                 @Override
                 protected void applySingleRecipe(ArgIterator i) {
-                    RA.addMixerRecipe(i.nextItem(), i.nextItem(), i.nextItem(), i.nextItem(), i.nextFluid(), i.nextFluid(), i.nextItem(), i.nextInt(), i.nextInt());
+                    RA.addMixerRecipe(i.nextItem(), i.nextItem(), i.nextItem(), i.nextItem(), i.nextItem(), i.nextItem(), i.nextFluid(), i.nextFluid(), i.nextItem(), i.nextInt(), i.nextInt());
                 }
             });
         }

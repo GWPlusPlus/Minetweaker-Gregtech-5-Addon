@@ -31,7 +31,6 @@ public class Fuels {
     public static void addDieselFuel(IItemStack output, IIngredient input, int euPerMillibucket) {
         MineTweakerAPI.apply(new AddRecipeAction(output, input, euPerMillibucket, 0));
     }
-
     /**
      * Adds a Gas Turbine fuel. If the given item does not contain any liquid,
      * it will generate the equivalent of 1000 millibuckets.
@@ -96,13 +95,26 @@ public class Fuels {
     public static void addMagicGeneratorFuel(IItemStack output, IIngredient input, int euPerMillibucket) {
         MineTweakerAPI.apply(new AddRecipeAction(output, input, euPerMillibucket, 5));
     }
+	
+	/**
+     * Adds a Semifluid fuel. If the given item does not contain any liquid,
+     * it will generate the equivalent of 1000 millibuckets.
+     *
+     * @param output           output item (optional, can be null)
+     * @param input            input item
+     * @param euPerMillibucket eu production per millibucket
+     */
+    @ZenMethod
+    public static void addSemiFluidFuel(IItemStack output, IIngredient input, int euPerMillibucket) {
+        MineTweakerAPI.apply(new AddRecipeAction(output, input, euPerMillibucket, 6));
+    }
 
     // ######################
     // ### Action classes ###
     // ######################
 
     private static class AddRecipeAction extends AddMultipleRecipeAction {
-        private static final String[] GENERATORS = {"diesel", "gas turbine", "thermal", "dense fluid", "plasma", "magic"};
+        private static final String[] GENERATORS = {"diesel", "gas turbine", "thermal", "dense fluid", "plasma", "magic", "semifluid"};
 
         public AddRecipeAction(IItemStack output, IIngredient input, int euPerMillibucket, int type) {
             super("Adding " + GENERATORS[type] + " fuel " + input, input, output, euPerMillibucket, type);

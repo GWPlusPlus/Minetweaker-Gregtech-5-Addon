@@ -15,8 +15,8 @@ import minetweaker.api.item.IItemStack;
 		
 	public class MultiblockCentrifuge {
     @ZenMethod
-    public static void addRecipe(IItemStack[] outputs, ILiquidStack fluidOutput, ILiquidStack fluidInput, IItemStack[] inputs, int[] chances, int durationTicks, int euPerTick, int Special) {
-        MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding Multiblock Centrifuge recipe for " + outputs, inputs, fluidInput, fluidOutput, outputs, chances, durationTicks, euPerTick, Special) {
+    public static void addRecipe(IItemStack[] inputs, ILiquidStack fluidInput, ILiquidStack fluidOutput, IItemStack[] outputs, int[] chances, int durationTicks, int euPerTick, int Special) {
+        MineTweakerAPI.apply(new AddMultipleRecipeAction("Adding Multiblock Centrifuge recipe for " + inputs, outputs, fluidOutput, fluidInput, inputs, chances, durationTicks, euPerTick, Special) {
             @Override
             protected void applySingleRecipe(ArgIterator i) {
                 CORE.RA.addMultiblockCentrifugeRecipe(i.nextItemArr(), i.nextFluidArr(), i.nextFluidArr(), i.nextItemArr(), 

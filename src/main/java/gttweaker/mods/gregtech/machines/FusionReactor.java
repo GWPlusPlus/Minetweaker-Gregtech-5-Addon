@@ -19,7 +19,7 @@ import static gregtech.api.enums.GT_Values.RA;
 @ModOnly(MOD_ID)
 public class FusionReactor {
     /**
-     * Adds a Mixer recipe.
+     * Adds a FusionReactor recipe.
      *
      * @param fluidOutput   primary fluid Output
      * @param fluidInput1   primary fluid Input
