@@ -51,7 +51,6 @@ public class GTTweaker {
         MineTweakerAPI.registerClass(Unpacker.class);
         MineTweakerAPI.registerClass(VacuumFreezer.class);
 		MineTweakerAPI.registerClass(WireAssembler.class);
-		MineTweakerAPI.registerClass(ComponentAssembler.class);
 		MineTweakerAPI.registerClass(IndustrialPulverizer.class);
 		MineTweakerAPI.registerClass(FlotationUnit.class);
         MineTweakerAPI.registerClass(SuperCoolingFreezer.class);		
