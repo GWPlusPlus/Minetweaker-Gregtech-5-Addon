@@ -72,14 +72,6 @@ public class GTTweaker {
             MineTweakerAPI.registerClass(ThermalCentrifuge.class);
             MineTweakerAPI.registerClass(PrimitiveBlastFurnace.class);
         }
-        if (GregTech_API.mGTPlusPlus) {
-			MineTweakerAPI.registerClass(MultiblockElectrolyzer.class);			
-			MineTweakerAPI.registerClass(MultiblockCentrifuge.class);
-            MineTweakerAPI.registerClass(BlastSmelter.class);
-            MineTweakerAPI.registerClass(CokeOven.class);
-            MineTweakerAPI.registerClass(Dehydrator.class);
-            MineTweakerAPI.registerClass(MatterFabricator.class);
-        }
     }
     
     @EventHandler
